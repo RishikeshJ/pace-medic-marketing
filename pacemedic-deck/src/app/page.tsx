@@ -133,15 +133,49 @@ const slides = [
     title: 'Why Choose PaceMedic',
     icon: Award,
     content: (
-      <div className="space-y-2 md:space-y-6">
+      <div className="space-y-4 md:space-y-6">
         <div className="text-center">
-          <h2 className="text-base md:text-4xl font-bold mb-1 md:mb-4">Why Choose PaceMedic</h2>
-          <p className="text-xs md:text-xl text-muted-foreground">Three compelling reasons to transform your healthcare delivery</p>
+          <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4">Why Choose PaceMedic</h2>
+          <p className="text-sm md:text-xl text-muted-foreground">Three compelling reasons to transform your healthcare delivery</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-6">
-                      <Card className="text-center">
-                            <CardHeader className="pb-1 md:pb-6">
+        {/* Mobile: Simple list, Desktop: 3-column grid */}
+        <div className="md:grid md:grid-cols-3 md:gap-6">
+          <div className="md:hidden space-y-3">
+            <div className="flex items-center gap-3 p-3 bg-accent rounded-lg">
+              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                <Users className="h-4 w-4 text-primary-foreground" />
+              </div>
+              <div>
+                <div className="font-semibold text-sm">Complete Healthcare Ecosystem</div>
+                <div className="text-xs text-muted-foreground">Video, appointments, prescriptions, records</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-3 p-3 bg-accent rounded-lg">
+              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                <UserCheck className="h-4 w-4 text-primary-foreground" />
+              </div>
+              <div>
+                <div className="font-semibold text-sm">Institution Management</div>
+                <div className="text-xs text-muted-foreground">Staff, forms, scheduling, analytics</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-3 p-3 bg-accent rounded-lg">
+              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                <Shield className="h-4 w-4 text-primary-foreground" />
+              </div>
+              <div>
+                <div className="font-semibold text-sm">Regulatory Compliance</div>
+                <div className="text-xs text-muted-foreground">MHA compliant, secure, audited</div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="hidden md:block">
+            <Card className="text-center">
+              <CardHeader className="pb-1 md:pb-6">
                 <div className="mx-auto w-6 h-6 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-1 md:mb-4">
                   <Users className="h-3 w-3 md:h-8 md:w-8 text-primary" />
                 </div>
@@ -149,83 +183,88 @@ const slides = [
               </CardHeader>
               <CardContent className="space-y-1 md:space-y-3">
                 <div className="space-y-0.5 md:space-y-2 text-xs md:text-sm">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                  <span>Video Consultations</span>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                    <span>Video Consultations</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                    <span>Appointment Management</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                    <span>Electronic Prescriptions</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                    <span>Patient Records</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                  <span>Appointment Management</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                  <span>Electronic Prescriptions</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                  <span>Patient Records</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </div>
           
-                      <Card className="text-center">
+          <div className="hidden md:block">
+            <Card className="text-center">
               <CardHeader className="pb-1 md:pb-6">
                 <div className="mx-auto w-6 h-6 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-1 md:mb-4">
                   <UserCheck className="h-3 w-3 md:h-8 md:w-8 text-primary" />
                 </div>
                 <CardTitle className="text-xs md:text-lg">Institution Management</CardTitle>
               </CardHeader>
-            <CardContent className="space-y-1 md:space-y-2">
-              <div className="space-y-1 text-xs md:text-sm">
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                  <span>Staff Onboarding & Permissions</span>
+              <CardContent className="space-y-1 md:space-y-2">
+                <div className="space-y-1 text-xs md:text-sm">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                    <span>Staff Onboarding & Permissions</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                    <span>Custom Pre-appointment Forms</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                    <span>Flexible Appointment Scheduling</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                    <span>Platform Analytics Dashboard</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                  <span>Custom Pre-appointment Forms</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                  <span>Flexible Appointment Scheduling</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                  <span>Platform Analytics Dashboard</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </div>
           
-                      <Card className="text-center">
+          <div className="hidden md:block">
+            <Card className="text-center">
               <CardHeader className="pb-1 md:pb-6">
                 <div className="mx-auto w-6 h-6 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-1 md:mb-4">
                   <Shield className="h-3 w-3 md:h-8 md:w-8 text-primary" />
                 </div>
                 <CardTitle className="text-xs md:text-lg">Regulatory Compliance</CardTitle>
               </CardHeader>
-            <CardContent className="space-y-1 md:space-y-2">
-              <div className="space-y-1 text-xs md:text-sm">
-                <div className="flex items-center gap-2">
-                  <Lock className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                  <span>MHA Regulations Compliant</span>
+              <CardContent className="space-y-1 md:space-y-2">
+                <div className="space-y-1 text-xs md:text-sm">
+                  <div className="flex items-center gap-2">
+                    <Lock className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                    <span>MHA Regulations Compliant</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <UserCheck className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                    <span>Identity Validation</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <ClipboardList className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                    <span>Audit Trails</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <PaymentIcon className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                    <span>Secure Payments</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <UserCheck className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                  <span>Identity Validation</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <ClipboardList className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                  <span>Audit Trails</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <PaymentIcon className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                  <span>Secure Payments</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     )
@@ -235,14 +274,49 @@ const slides = [
     title: 'Key Features & Benefits',
     icon: Zap,
     content: (
-      <div className="space-y-3 md:space-y-6">
+      <div className="space-y-4 md:space-y-6">
         <div className="text-center">
-          <h2 className="text-lg md:text-4xl font-bold mb-2 md:mb-4">Key Features & Benefits</h2>
+          <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4">Key Features & Benefits</h2>
           <p className="text-sm md:text-xl text-muted-foreground">Comprehensive tools for modern healthcare delivery</p>
         </div>
         
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6">
-            <div className="space-y-2 md:space-y-6">
+        {/* Mobile: Simple list, Desktop: 2x2 grid */}
+        <div className="md:grid md:grid-cols-2 md:gap-6">
+          <div className="md:hidden space-y-3">
+            <div className="flex items-center gap-3 p-3 bg-accent rounded-lg">
+              <Calendar className="h-5 w-5 text-primary" />
+              <div>
+                <div className="font-semibold text-sm">Smart Scheduling</div>
+                <div className="text-xs text-muted-foreground">Real-time updates, 24/7 booking</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-3 p-3 bg-accent rounded-lg">
+              <Video className="h-5 w-5 text-primary" />
+              <div>
+                <div className="font-semibold text-sm">HD Video</div>
+                <div className="text-xs text-muted-foreground">HD quality, screen sharing</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-3 p-3 bg-accent rounded-lg">
+              <FileText className="h-5 w-5 text-primary" />
+              <div>
+                <div className="font-semibold text-sm">Medical Workflows</div>
+                <div className="text-xs text-muted-foreground">Digital prescriptions, custom forms</div>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-3 p-3 bg-accent rounded-lg">
+              <CreditCard className="h-5 w-5 text-primary" />
+              <div>
+                <div className="font-semibold text-sm">Payments</div>
+                <div className="text-xs text-muted-foreground">Razorpay integration, credit system</div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="hidden md:block space-y-6">
             <Card>
               <CardHeader className="pb-2 md:pb-6">
                 <CardTitle className="flex items-center gap-2 text-sm md:text-base">
@@ -294,7 +368,7 @@ const slides = [
             </Card>
           </div>
           
-          <div className="space-y-2 md:space-y-6">
+          <div className="hidden md:block space-y-6">
             <Card>
               <CardHeader className="pb-3 md:pb-6">
                 <CardTitle className="flex items-center gap-2 text-sm md:text-base">
@@ -354,14 +428,55 @@ const slides = [
     title: 'Business Impact',
     icon: TrendingUp,
     content: (
-      <div className="space-y-2 md:space-y-6">
+      <div className="space-y-4 md:space-y-6">
         <div className="text-center">
-          <h2 className="text-base md:text-4xl font-bold mb-1 md:mb-4">Business Impact for Institutions</h2>
-          <p className="text-xs md:text-xl text-muted-foreground">Transform your healthcare delivery with measurable results</p>
+          <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4">Business Impact for Institutions</h2>
+          <p className="text-sm md:text-xl text-muted-foreground">Transform your healthcare delivery with measurable results</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-6">
-          <div className="space-y-1 md:space-y-6">
+        {/* Mobile: Simple timeline, Desktop: 2-column grid */}
+        <div className="md:grid md:grid-cols-2 md:gap-6">
+          <div className="md:hidden space-y-3">
+            <div className="p-3 bg-accent rounded-lg">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                  <span className="text-xs text-primary-foreground font-bold">1-3</span>
+                </div>
+                <span className="font-semibold text-sm">Immediate Benefits</span>
+              </div>
+              <div className="text-xs space-y-1 ml-8">
+                <div className="flex items-center gap-1">
+                  <CheckCircle className="h-2 w-2 text-primary" />
+                  <span>Reliable patient follow-ups</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <CheckCircle className="h-2 w-2 text-primary" />
+                  <span>Reduced admin workload</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="p-3 bg-accent rounded-lg">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+                  <span className="text-xs text-primary-foreground font-bold">6-12</span>
+                </div>
+                <span className="font-semibold text-sm">Long-term Advantages</span>
+              </div>
+              <div className="text-xs space-y-1 ml-8">
+                <div className="flex items-center gap-1">
+                  <Globe className="h-2 w-2 text-primary" />
+                  <span>Geographic expansion</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Users className="h-2 w-2 text-primary" />
+                  <span>Rural specialist access</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="hidden md:block">
             <Card className="border-accent bg-accent/50">
               <CardHeader className="pb-1 md:pb-4">
                 <CardTitle className="text-xs md:text-lg text-primary">Immediate Benefits (Month 1-3)</CardTitle>
@@ -385,7 +500,7 @@ const slides = [
             </Card>
           </div>
           
-          <div className="space-y-1 md:space-y-6">
+          <div className="hidden md:block">
             <Card className="border-accent bg-accent/50">
               <CardHeader className="pb-1 md:pb-4">
                 <CardTitle className="text-xs md:text-lg text-primary">Long-term Advantages (6-12 months)</CardTitle>
@@ -410,36 +525,62 @@ const slides = [
           </div>
         </div>
         
-        <Card>
-          <CardHeader className="pb-1 md:pb-4">
-            <CardTitle className="text-xs md:text-lg">Operational Efficiency</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-1 md:space-y-2">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-4">
-              <div className="text-center p-1 md:p-4 bg-accent rounded-lg">
-                <div className="flex justify-center mb-1 md:mb-2">
-                  <Bot className="h-4 w-4 md:h-8 md:w-8 text-primary" />
-                </div>
-                <div className="text-xs md:text-sm font-semibold">Automated Scheduling</div>
-                <div className="text-xs md:text-sm text-muted-foreground">Reduces booking errors</div>
+        {/* Mobile: Compact efficiency metrics, Desktop: Full card */}
+        <div className="md:block">
+          <div className="md:hidden">
+            <div className="text-center mb-3">
+              <h3 className="font-semibold text-sm">Operational Efficiency</h3>
+            </div>
+            <div className="grid grid-cols-3 gap-2">
+              <div className="text-center p-2 bg-accent rounded-lg">
+                <Bot className="h-4 w-4 text-primary mx-auto mb-1" />
+                <div className="text-xs font-semibold">Auto Scheduling</div>
+                <div className="text-xs text-muted-foreground">No errors</div>
               </div>
-              <div className="text-center p-1 md:p-4 bg-accent rounded-lg">
-                <div className="flex justify-center mb-1 md:mb-2">
-                  <Smartphone className="h-4 w-4 md:h-8 md:w-8 text-primary" />
-                </div>
-                <div className="text-xs md:text-sm font-semibold">Digital Records</div>
-                <div className="text-xs md:text-sm text-muted-foreground">Eliminates paper-based systems</div>
+              <div className="text-center p-2 bg-accent rounded-lg">
+                <Smartphone className="h-4 w-4 text-primary mx-auto mb-1" />
+                <div className="text-xs font-semibold">Digital Records</div>
+                <div className="text-xs text-muted-foreground">Paperless</div>
               </div>
-              <div className="text-center p-1 md:p-4 bg-accent rounded-lg">
-                <div className="flex justify-center mb-1 md:mb-2">
-                  <BarChart3 className="h-4 w-4 md:h-8 md:w-8 text-primary" />
-                </div>
-                <div className="text-xs md:text-sm font-semibold">Analytics Dashboard</div>
-                <div className="text-xs md:text-sm text-muted-foreground">Data-driven insights</div>
+              <div className="text-center p-2 bg-accent rounded-lg">
+                <BarChart3 className="h-4 w-4 text-primary mx-auto mb-1" />
+                <div className="text-xs font-semibold">Analytics</div>
+                <div className="text-xs text-muted-foreground">Insights</div>
               </div>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+          
+          <Card className="hidden md:block">
+            <CardHeader className="pb-1 md:pb-4">
+              <CardTitle className="text-xs md:text-lg">Operational Efficiency</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-1 md:space-y-2">
+              <div className="md:grid md:grid-cols-3 md:gap-4">
+                <div className="text-center p-1 md:p-4 bg-accent rounded-lg">
+                  <div className="flex justify-center mb-1 md:mb-2">
+                    <Bot className="h-4 w-4 md:h-8 md:w-8 text-primary" />
+                  </div>
+                  <div className="text-xs md:text-sm font-semibold">Automated Scheduling</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">Reduces booking errors</div>
+                </div>
+                <div className="text-center p-1 md:p-4 bg-accent rounded-lg">
+                  <div className="flex justify-center mb-1 md:mb-2">
+                    <Smartphone className="h-4 w-4 md:h-8 md:w-8 text-primary" />
+                  </div>
+                  <div className="text-xs md:text-sm font-semibold">Digital Records</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">Eliminates paper-based systems</div>
+                </div>
+                <div className="text-center p-1 md:p-4 bg-accent rounded-lg">
+                  <div className="flex justify-center mb-1 md:mb-2">
+                    <BarChart3 className="h-4 w-4 md:h-8 md:w-8 text-primary" />
+                  </div>
+                  <div className="text-xs md:text-sm font-semibold">Analytics Dashboard</div>
+                  <div className="text-xs md:text-sm text-muted-foreground">Data-driven insights</div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     )
   },
@@ -448,96 +589,140 @@ const slides = [
     title: 'Call to Action',
     icon: Phone,
     content: (
-      <div className="space-y-6 md:space-y-8 text-center">
+      <div className="space-y-4 md:space-y-8 text-center">
         <div>
-          <h2 className="text-xl md:text-4xl font-bold mb-3 md:mb-4">Ready to Transform Your Healthcare Delivery?</h2>
-          <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4">Ready to Transform Your Healthcare Delivery?</h2>
+          <p className="text-sm md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Join the future of healthcare with PaceMedic's comprehensive telehealth platform
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 max-w-4xl mx-auto">
-          <Card className="text-center">
-            <CardHeader className="pb-3 md:pb-6">
-              <div className="mx-auto w-10 h-10 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-3 md:mb-4">
-                <Globe className="h-5 w-5 md:h-8 md:w-8 text-primary" />
-              </div>
-              <CardTitle className="text-base md:text-lg">Schedule Demo</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-4">
-                See the platform in action at pacemedic.com
-              </p>
-              <Button className="w-full">
-                Visit Website
-              </Button>
-            </CardContent>
-          </Card>
+        {/* Mobile: Simple buttons, Desktop: 3-column grid */}
+        <div className="md:grid md:grid-cols-3 md:gap-6 max-w-4xl mx-auto">
+          <div className="md:hidden space-y-3">
+            <Button className="w-full" size="lg">
+              <Globe className="h-4 w-4 mr-2" />
+              Visit Website
+            </Button>
+            <Button variant="outline" className="w-full" size="lg">
+              <Users className="h-4 w-4 mr-2" />
+              Start Pilot
+            </Button>
+            <Button variant="outline" className="w-full" size="lg">
+              <Phone className="h-4 w-4 mr-2" />
+              Contact Us
+            </Button>
+          </div>
           
-          <Card className="text-center">
-            <CardHeader>
-              <div className="mx-auto w-12 h-12 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-4">
-                <Users className="h-6 w-6 md:h-8 md:w-8 text-primary" />
-              </div>
-              <CardTitle>Pilot Program</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-4">
-                Start with a small group of providers
-              </p>
-              <Button variant="outline" className="w-full">
-                Start Pilot
-              </Button>
-            </CardContent>
-          </Card>
+          <div className="hidden md:block">
+            <Card className="text-center">
+              <CardHeader className="pb-3 md:pb-6">
+                <div className="mx-auto w-10 h-10 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-3 md:mb-4">
+                  <Globe className="h-5 w-5 md:h-8 md:w-8 text-primary" />
+                </div>
+                <CardTitle className="text-base md:text-lg">Schedule Demo</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  See the platform in action at pacemedic.com
+                </p>
+                <Button className="w-full">
+                  Visit Website
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
           
-          <Card className="text-center">
-            <CardHeader>
-              <div className="mx-auto w-12 h-12 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-4">
-                <Phone className="h-6 w-6 md:h-8 md:w-8 text-primary" />
-              </div>
-              <CardTitle>Contact Us</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-4">
-                Get in touch for personalized consultation
-              </p>
-              <Button variant="outline" className="w-full">
-                Contact Now
-              </Button>
-            </CardContent>
-          </Card>
+          <div className="hidden md:block">
+            <Card className="text-center">
+              <CardHeader>
+                <div className="mx-auto w-12 h-12 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-4">
+                  <Users className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                </div>
+                <CardTitle>Pilot Program</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Start with a small group of providers
+                </p>
+                <Button variant="outline" className="w-full">
+                  Start Pilot
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+          
+          <div className="hidden md:block">
+            <Card className="text-center">
+              <CardHeader>
+                <div className="mx-auto w-12 h-12 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-4">
+                  <Phone className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                </div>
+                <CardTitle>Contact Us</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Get in touch for personalized consultation
+                </p>
+                <Button variant="outline" className="w-full">
+                  Contact Now
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
         </div>
         
-        <div className="bg-gradient-to-r from-primary to-primary/80 text-primary-foreground p-8 rounded-lg">
-          <h3 className="text-2xl font-bold mb-4">Why Choose PaceMedic Now?</h3>
-          <div className="grid md:grid-cols-2 gap-6 text-left">
-            <div className="space-y-3">
+        {/* Mobile: Compact benefits, Desktop: Full gradient section */}
+        <div className="md:block">
+          <div className="md:hidden bg-accent p-4 rounded-lg">
+            <h3 className="font-bold text-sm mb-3">Why Choose PaceMedic Now?</h3>
+            <div className="space-y-2 text-xs">
               <div className="flex items-center gap-2">
-                <Zap className="h-5 w-5" />
-                <span>Immediate Impact - Start seeing benefits within the first month</span>
+                <Zap className="h-3 w-3 text-primary" />
+                <span>Immediate Impact - Benefits within first month</span>
               </div>
               <div className="flex items-center gap-2">
-                <Target className="h-5 w-5" />
-                <span>Risk-Free Trial - Test the platform with a pilot program</span>
+                <Target className="h-3 w-3 text-primary" />
+                <span>Risk-Free Trial - Test with pilot program</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <User className="h-3 w-3 text-primary" />
+                <span>Expert Support - Dedicated implementation team</span>
               </div>
             </div>
-            <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <User className="h-5 w-5" />
-                <span>Expert Support - Dedicated team for successful implementation</span>
+          </div>
+          
+          <div className="hidden md:block bg-gradient-to-r from-primary to-primary/80 text-primary-foreground p-8 rounded-lg">
+            <h3 className="text-2xl font-bold mb-4">Why Choose PaceMedic Now?</h3>
+            <div className="grid md:grid-cols-2 gap-6 text-left">
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <Zap className="h-5 w-5" />
+                  <span>Immediate Impact - Start seeing benefits within the first month</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Target className="h-5 w-5" />
+                  <span>Risk-Free Trial - Test the platform with a pilot program</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <CheckSquare className="h-5 w-5" />
-                <span>Proven Results - Active users experiencing significant improvements</span>
+              <div className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <User className="h-5 w-5" />
+                  <span>Expert Support - Dedicated team for successful implementation</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckSquare className="h-5 w-5" />
+                  <span>Proven Results - Active users experiencing significant improvements</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
         
-        <div className="space-y-4">
-          <h3 className="text-xl md:text-2xl font-bold">Contact Information</h3>
-          <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8">
+        {/* Contact info - same for both */}
+        <div className="space-y-2 md:space-y-4">
+          <h3 className="text-lg md:text-2xl font-bold">Contact Information</h3>
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-1 md:space-y-0 md:space-x-8">
             <div className="flex items-center gap-2">
               <Globe className="h-4 w-4 md:h-5 md:w-5" />
               <span className="text-sm md:text-base">https://pacemedic.com</span>
