@@ -133,22 +133,22 @@ const slides = [
     title: 'Why Choose PaceMedic',
     icon: Award,
     content: (
-      <div className="space-y-4 md:space-y-6">
+      <div className="space-y-2 md:space-y-6">
         <div className="text-center">
-          <h2 className="text-lg md:text-4xl font-bold mb-2 md:mb-4">Why Choose PaceMedic</h2>
-          <p className="text-sm md:text-xl text-muted-foreground">Three compelling reasons to transform your healthcare delivery</p>
+          <h2 className="text-base md:text-4xl font-bold mb-1 md:mb-4">Why Choose PaceMedic</h2>
+          <p className="text-xs md:text-xl text-muted-foreground">Three compelling reasons to transform your healthcare delivery</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-6">
                       <Card className="text-center">
-              <CardHeader className="pb-2 md:pb-6">
-                <div className="mx-auto w-8 h-8 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-2 md:mb-4">
-                  <Users className="h-4 w-4 md:h-8 md:w-8 text-primary" />
+                            <CardHeader className="pb-1 md:pb-6">
+                <div className="mx-auto w-6 h-6 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-1 md:mb-4">
+                  <Users className="h-3 w-3 md:h-8 md:w-8 text-primary" />
                 </div>
-                <CardTitle className="text-sm md:text-lg">Complete Healthcare Ecosystem</CardTitle>
+                <CardTitle className="text-xs md:text-lg">Complete Healthcare Ecosystem</CardTitle>
               </CardHeader>
-                          <CardContent className="space-y-1.5 md:space-y-3">
-                <div className="space-y-1 md:space-y-2 text-xs md:text-sm">
+              <CardContent className="space-y-1 md:space-y-3">
+                <div className="space-y-0.5 md:space-y-2 text-xs md:text-sm">
                 <div className="flex items-center gap-2">
                   <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
                   <span>Video Consultations</span>
@@ -170,11 +170,11 @@ const slides = [
           </Card>
           
                       <Card className="text-center">
-              <CardHeader className="pb-2 md:pb-6">
-                <div className="mx-auto w-8 h-8 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-2 md:mb-4">
-                  <UserCheck className="h-4 w-4 md:h-8 md:w-8 text-primary" />
+              <CardHeader className="pb-1 md:pb-6">
+                <div className="mx-auto w-6 h-6 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-1 md:mb-4">
+                  <UserCheck className="h-3 w-3 md:h-8 md:w-8 text-primary" />
                 </div>
-                <CardTitle className="text-sm md:text-lg">Institution Management</CardTitle>
+                <CardTitle className="text-xs md:text-lg">Institution Management</CardTitle>
               </CardHeader>
             <CardContent className="space-y-1 md:space-y-2">
               <div className="space-y-1 text-xs md:text-sm">
@@ -199,11 +199,11 @@ const slides = [
           </Card>
           
                       <Card className="text-center">
-              <CardHeader className="pb-2 md:pb-6">
-                <div className="mx-auto w-8 h-8 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-2 md:mb-4">
-                  <Shield className="h-4 w-4 md:h-8 md:w-8 text-primary" />
+              <CardHeader className="pb-1 md:pb-6">
+                <div className="mx-auto w-6 h-6 md:w-16 md:h-16 bg-accent rounded-full flex items-center justify-center mb-1 md:mb-4">
+                  <Shield className="h-3 w-3 md:h-8 md:w-8 text-primary" />
                 </div>
-                <CardTitle className="text-sm md:text-lg">Regulatory Compliance</CardTitle>
+                <CardTitle className="text-xs md:text-lg">Regulatory Compliance</CardTitle>
               </CardHeader>
             <CardContent className="space-y-1 md:space-y-2">
               <div className="space-y-1 text-xs md:text-sm">
@@ -354,20 +354,20 @@ const slides = [
     title: 'Business Impact',
     icon: TrendingUp,
     content: (
-      <div className="space-y-3 md:space-y-6">
+      <div className="space-y-2 md:space-y-6">
         <div className="text-center">
-          <h2 className="text-lg md:text-4xl font-bold mb-2 md:mb-4">Business Impact for Institutions</h2>
-          <p className="text-sm md:text-xl text-muted-foreground">Transform your healthcare delivery with measurable results</p>
+          <h2 className="text-base md:text-4xl font-bold mb-1 md:mb-4">Business Impact for Institutions</h2>
+          <p className="text-xs md:text-xl text-muted-foreground">Transform your healthcare delivery with measurable results</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6">
-          <div className="space-y-2 md:space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-6">
+          <div className="space-y-1 md:space-y-6">
             <Card className="border-accent bg-accent/50">
-              <CardHeader className="pb-2 md:pb-4">
-                <CardTitle className="text-sm md:text-lg text-primary">Immediate Benefits (Month 1-3)</CardTitle>
+              <CardHeader className="pb-1 md:pb-4">
+                <CardTitle className="text-xs md:text-lg text-primary">Immediate Benefits (Month 1-3)</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-1 md:space-y-2">
-                <div className="space-y-1 text-xs md:text-sm">
+              <CardContent className="space-y-0.5 md:space-y-2">
+                <div className="space-y-0.5 text-xs md:text-sm">
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
                     <span>Reliable patient follow-ups</span>
@@ -385,13 +385,13 @@ const slides = [
             </Card>
           </div>
           
-          <div className="space-y-2 md:space-y-6">
+          <div className="space-y-1 md:space-y-6">
             <Card className="border-accent bg-accent/50">
-              <CardHeader className="pb-2 md:pb-4">
-                <CardTitle className="text-sm md:text-lg text-primary">Long-term Advantages (6-12 months)</CardTitle>
+              <CardHeader className="pb-1 md:pb-4">
+                <CardTitle className="text-xs md:text-lg text-primary">Long-term Advantages (6-12 months)</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-1 md:space-y-2">
-                <div className="space-y-1 text-xs md:text-sm">
+              <CardContent className="space-y-0.5 md:space-y-2">
+                <div className="space-y-0.5 text-xs md:text-sm">
                   <div className="flex items-center gap-2">
                     <Globe className="h-3 w-3 md:h-4 md:w-4 text-primary" />
                     <span>Geographic expansion without physical locations</span>
@@ -411,28 +411,28 @@ const slides = [
         </div>
         
         <Card>
-          <CardHeader className="pb-2 md:pb-4">
-            <CardTitle className="text-sm md:text-lg">Operational Efficiency</CardTitle>
+          <CardHeader className="pb-1 md:pb-4">
+            <CardTitle className="text-xs md:text-lg">Operational Efficiency</CardTitle>
           </CardHeader>
           <CardContent className="space-y-1 md:space-y-2">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
-              <div className="text-center p-2 md:p-4 bg-accent rounded-lg">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-4">
+              <div className="text-center p-1 md:p-4 bg-accent rounded-lg">
                 <div className="flex justify-center mb-1 md:mb-2">
-                  <Bot className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                  <Bot className="h-4 w-4 md:h-8 md:w-8 text-primary" />
                 </div>
                 <div className="text-xs md:text-sm font-semibold">Automated Scheduling</div>
                 <div className="text-xs md:text-sm text-muted-foreground">Reduces booking errors</div>
               </div>
-              <div className="text-center p-2 md:p-4 bg-accent rounded-lg">
+              <div className="text-center p-1 md:p-4 bg-accent rounded-lg">
                 <div className="flex justify-center mb-1 md:mb-2">
-                  <Smartphone className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                  <Smartphone className="h-4 w-4 md:h-8 md:w-8 text-primary" />
                 </div>
                 <div className="text-xs md:text-sm font-semibold">Digital Records</div>
                 <div className="text-xs md:text-sm text-muted-foreground">Eliminates paper-based systems</div>
               </div>
-              <div className="text-center p-2 md:p-4 bg-accent rounded-lg">
+              <div className="text-center p-1 md:p-4 bg-accent rounded-lg">
                 <div className="flex justify-center mb-1 md:mb-2">
-                  <BarChart3 className="h-6 w-6 md:h-8 md:w-8 text-primary" />
+                  <BarChart3 className="h-4 w-4 md:h-8 md:w-8 text-primary" />
                 </div>
                 <div className="text-xs md:text-sm font-semibold">Analytics Dashboard</div>
                 <div className="text-xs md:text-sm text-muted-foreground">Data-driven insights</div>
@@ -734,7 +734,7 @@ export default function MarketingDeck() {
         {slides.map((slide, index) => (
           <motion.div
             key={slide.id}
-            className={`h-screen overflow-y-auto pt-16 pb-4 px-4 md:px-8 md:pt-8 ${
+            className={`h-screen overflow-y-auto pt-20 pb-20 px-3 md:px-8 md:pt-8 md:pb-8 ${
               index === currentSlide ? 'block' : 'hidden'
             }`}
             initial={{ opacity: 0, y: 50 }}
@@ -744,7 +744,7 @@ export default function MarketingDeck() {
             }}
             transition={{ duration: 0.5 }}
           >
-            <div className="max-w-6xl w-full mx-auto min-h-full">
+            <div className="max-w-6xl w-full mx-auto">
               {slide.content}
             </div>
           </motion.div>
