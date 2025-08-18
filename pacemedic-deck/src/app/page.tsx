@@ -67,7 +67,63 @@ const slides = [
             </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 max-w-6xl mx-auto">
+          {/* Mobile: Simple icon-based layout */}
+          <div className="md:hidden space-y-4">
+            <div className="space-y-3">
+              <div className="p-3 bg-accent rounded-lg">
+                <div className="flex items-center gap-3 mb-3">
+                  <Zap className="h-5 w-5 text-primary" />
+                  <div className="font-semibold text-sm">Complete Telehealth Ecosystem</div>
+                </div>
+                <div className="space-y-2 text-xs">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary" />
+                    <span>HD Video Consultations</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary" />
+                    <span>Customizable Patient Journey</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary" />
+                    <span>Customizable Platform</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary" />
+                    <span>Easy Staff Onboarding</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="p-3 bg-accent rounded-lg">
+                <div className="flex items-center gap-3 mb-3">
+                  <TrendingUp className="h-5 w-5 text-primary" />
+                  <div className="font-semibold text-sm">Platform Benefits</div>
+                </div>
+                <div className="space-y-2 text-xs">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary" />
+                    <span>Eliminate Patient Travel Time</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary" />
+                    <span>Monetize Follow-up Consultations</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary" />
+                    <span>Flexible Service Delivery</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="h-3 w-3 text-primary" />
+                    <span>Dedicated Organization Portal</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Desktop: Full card layout */}
+          <div className="hidden md:grid md:grid-cols-2 gap-6 md:gap-12 max-w-6xl mx-auto">
             <Card className="md:h-80">
               <CardHeader className="pb-4">
                 <CardTitle className="flex items-center gap-3 text-lg md:text-xl">
@@ -432,158 +488,142 @@ const slides = [
     title: 'Business Impact',
     icon: TrendingUp,
     content: (
-      <div className="flex flex-col justify-center h-full space-y-4 md:space-y-6">
-        <div className="text-center">
-          <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4">Business Impact for Institutions</h2>
-          <p className="text-sm md:text-xl text-muted-foreground">Transform your healthcare delivery with measurable results</p>
-        </div>
-        
-        {/* Mobile: Simple timeline, Desktop: 2-column grid */}
-        <div className="md:grid md:grid-cols-2 md:gap-6 max-w-6xl mx-auto">
-          <div className="md:hidden space-y-3">
-            <div className="p-3 bg-accent rounded-lg">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
+      <div className="flex flex-col h-full">
+        <div className="flex-1 flex flex-col justify-center space-y-8 md:space-y-12">
+          <div className="text-center">
+            <h2 className="text-xl md:text-5xl font-bold mb-3 md:mb-6">Business Impact for Institutions</h2>
+            <p className="text-sm md:text-2xl text-muted-foreground">Transform your healthcare delivery with measurable results</p>
+          </div>
+          
+          {/* Mobile: Simple timeline, Desktop: 2-column grid */}
+          <div className="md:grid md:grid-cols-2 md:gap-6 max-w-6xl mx-auto">
+            <div className="md:hidden space-y-3">
+              <div className="flex items-center gap-3 p-3 bg-accent rounded-lg">
+                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
                   <span className="text-xs text-primary-foreground font-bold">1-3</span>
                 </div>
-                <span className="font-semibold text-sm">Immediate Benefits</span>
-              </div>
-              <div className="text-xs space-y-1 ml-8">
-                <div className="flex items-center gap-1">
-                  <CheckCircle className="h-2 w-2 text-primary" />
-                  <span>Reliable patient follow-ups</span>
+                <div>
+                  <div className="font-semibold text-sm">Immediate Benefits</div>
+                  <div className="text-xs text-muted-foreground">Patient follow-ups, reduced admin work</div>
                 </div>
-                <div className="flex items-center gap-1">
-                  <CheckCircle className="h-2 w-2 text-primary" />
-                  <span>Reduced admin workload</span>
+              </div>
+              
+              <div className="flex items-center gap-3 p-3 bg-accent rounded-lg">
+                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+                  <span className="text-xs text-primary-foreground font-bold">6-12</span>
+                </div>
+                <div>
+                  <div className="font-semibold text-sm">Long-term Advantages</div>
+                  <div className="text-xs text-muted-foreground">Geographic expansion, rural access</div>
                 </div>
               </div>
             </div>
             
-            <div className="p-3 bg-accent rounded-lg">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center">
-                  <span className="text-xs text-primary-foreground font-bold">6-12</span>
-                </div>
-                <span className="font-semibold text-sm">Long-term Advantages</span>
-              </div>
-              <div className="text-xs space-y-1 ml-8">
-                <div className="flex items-center gap-1">
-                  <Globe className="h-2 w-2 text-primary" />
-                  <span>Geographic expansion</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Users className="h-2 w-2 text-primary" />
-                  <span>Rural specialist access</span>
-                </div>
-              </div>
+            <div className="hidden md:block">
+              <Card className="border-accent bg-accent/50 md:h-64">
+                <CardHeader className="pb-1 md:pb-4">
+                  <CardTitle className="text-xs md:text-lg text-primary">Immediate Benefits (Month 1-3)</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-0.5 md:space-y-2">
+                  <div className="space-y-0.5 text-xs md:text-sm">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                      <span>Reliable patient follow-ups</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                      <span>Reduction in administrative workload</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                      <span>Quick platform onboarding</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            
+            <div className="hidden md:block">
+              <Card className="border-accent bg-accent/50 md:h-64">
+                <CardHeader className="pb-1 md:pb-4">
+                  <CardTitle className="text-xs md:text-lg text-primary">Long-term Advantages (6-12 months)</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-0.5 md:space-y-2">
+                  <div className="space-y-0.5 text-xs md:text-sm">
+                    <div className="flex items-center gap-2">
+                      <Globe className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                      <span>Geographic expansion without physical locations</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Users className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                      <span>Specialist access for rural areas</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Award className="h-3 w-3 md:h-4 md:w-4 text-primary" />
+                      <span>Competitive advantage in digital healthcare</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
           
-          <div className="hidden md:block">
-            <Card className="border-accent bg-accent/50 md:h-64">
+          {/* Mobile: Compact efficiency metrics, Desktop: Full card */}
+          <div className="md:block">
+            <div className="md:hidden">
+              <div className="text-center mb-3">
+                <h3 className="font-semibold text-sm">Operational Efficiency</h3>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                <div className="text-center p-2 bg-accent rounded-lg">
+                  <Bot className="h-4 w-4 text-primary mx-auto mb-1" />
+                  <div className="text-xs font-semibold">Auto Scheduling</div>
+                  <div className="text-xs text-muted-foreground">No errors</div>
+                </div>
+                <div className="text-center p-2 bg-accent rounded-lg">
+                  <Smartphone className="h-4 w-4 text-primary mx-auto mb-1" />
+                  <div className="text-xs font-semibold">Digital Records</div>
+                  <div className="text-xs text-muted-foreground">Paperless</div>
+                </div>
+                <div className="text-center p-2 bg-accent rounded-lg">
+                  <BarChart3 className="h-4 w-4 text-primary mx-auto mb-1" />
+                  <div className="text-xs font-semibold">Analytics</div>
+                  <div className="text-xs text-muted-foreground">Insights</div>
+                </div>
+              </div>
+            </div>
+            
+            <Card className="hidden md:block">
               <CardHeader className="pb-1 md:pb-4">
-                <CardTitle className="text-xs md:text-lg text-primary">Immediate Benefits (Month 1-3)</CardTitle>
+                <CardTitle className="text-xs md:text-lg">Operational Efficiency</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-0.5 md:space-y-2">
-                <div className="space-y-0.5 text-xs md:text-sm">
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    <span>Reliable patient follow-ups</span>
+              <CardContent className="space-y-1 md:space-y-2">
+                <div className="md:grid md:grid-cols-3 md:gap-4">
+                  <div className="text-center p-1 md:p-4 bg-accent rounded-lg">
+                    <div className="flex justify-center mb-1 md:mb-2">
+                      <Bot className="h-4 w-4 md:h-8 md:w-8 text-primary" />
+                    </div>
+                    <div className="text-xs md:text-sm font-semibold">Automated Scheduling</div>
+                    <div className="text-xs md:text-sm text-muted-foreground">Reduces booking errors</div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    <span>Reduction in administrative workload</span>
+                  <div className="text-center p-1 md:p-4 bg-accent rounded-lg">
+                    <div className="flex justify-center mb-1 md:mb-2">
+                      <Smartphone className="h-4 w-4 md:h-8 md:w-8 text-primary" />
+                    </div>
+                    <div className="text-xs md:text-sm font-semibold">Digital Records</div>
+                    <div className="text-xs md:text-sm text-muted-foreground">Eliminates paper-based systems</div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    <span>Quick platform onboarding</span>
+                  <div className="text-center p-1 md:p-4 bg-accent rounded-lg">
+                    <div className="flex justify-center mb-1 md:mb-2">
+                      <BarChart3 className="h-4 w-4 md:h-8 md:w-8 text-primary" />
+                    </div>
+                    <div className="text-xs md:text-sm font-semibold">Analytics Dashboard</div>
+                    <div className="text-xs md:text-sm text-muted-foreground">Data-driven insights</div>
                   </div>
                 </div>
               </CardContent>
             </Card>
           </div>
-          
-          <div className="hidden md:block">
-            <Card className="border-accent bg-accent/50 md:h-64">
-              <CardHeader className="pb-1 md:pb-4">
-                <CardTitle className="text-xs md:text-lg text-primary">Long-term Advantages (6-12 months)</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-0.5 md:space-y-2">
-                <div className="space-y-0.5 text-xs md:text-sm">
-                  <div className="flex items-center gap-2">
-                    <Globe className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    <span>Geographic expansion without physical locations</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Users className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    <span>Specialist access for rural areas</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Award className="h-3 w-3 md:h-4 md:w-4 text-primary" />
-                    <span>Competitive advantage in digital healthcare</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-        
-        {/* Mobile: Compact efficiency metrics, Desktop: Full card */}
-        <div className="md:block">
-          <div className="md:hidden">
-            <div className="text-center mb-3">
-              <h3 className="font-semibold text-sm">Operational Efficiency</h3>
-            </div>
-            <div className="grid grid-cols-3 gap-2">
-              <div className="text-center p-2 bg-accent rounded-lg">
-                <Bot className="h-4 w-4 text-primary mx-auto mb-1" />
-                <div className="text-xs font-semibold">Auto Scheduling</div>
-                <div className="text-xs text-muted-foreground">No errors</div>
-              </div>
-              <div className="text-center p-2 bg-accent rounded-lg">
-                <Smartphone className="h-4 w-4 text-primary mx-auto mb-1" />
-                <div className="text-xs font-semibold">Digital Records</div>
-                <div className="text-xs text-muted-foreground">Paperless</div>
-              </div>
-              <div className="text-center p-2 bg-accent rounded-lg">
-                <BarChart3 className="h-4 w-4 text-primary mx-auto mb-1" />
-                <div className="text-xs font-semibold">Analytics</div>
-                <div className="text-xs text-muted-foreground">Insights</div>
-              </div>
-            </div>
-          </div>
-          
-          <Card className="hidden md:block">
-            <CardHeader className="pb-1 md:pb-4">
-              <CardTitle className="text-xs md:text-lg">Operational Efficiency</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-1 md:space-y-2">
-              <div className="md:grid md:grid-cols-3 md:gap-4">
-                <div className="text-center p-1 md:p-4 bg-accent rounded-lg">
-                  <div className="flex justify-center mb-1 md:mb-2">
-                    <Bot className="h-4 w-4 md:h-8 md:w-8 text-primary" />
-                  </div>
-                  <div className="text-xs md:text-sm font-semibold">Automated Scheduling</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">Reduces booking errors</div>
-                </div>
-                <div className="text-center p-1 md:p-4 bg-accent rounded-lg">
-                  <div className="flex justify-center mb-1 md:mb-2">
-                    <Smartphone className="h-4 w-4 md:h-8 md:w-8 text-primary" />
-                  </div>
-                  <div className="text-xs md:text-sm font-semibold">Digital Records</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">Eliminates paper-based systems</div>
-                </div>
-                <div className="text-center p-1 md:p-4 bg-accent rounded-lg">
-                  <div className="flex justify-center mb-1 md:mb-2">
-                    <BarChart3 className="h-4 w-4 md:h-8 md:w-8 text-primary" />
-                  </div>
-                  <div className="text-xs md:text-sm font-semibold">Analytics Dashboard</div>
-                  <div className="text-xs md:text-sm text-muted-foreground">Data-driven insights</div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     )
