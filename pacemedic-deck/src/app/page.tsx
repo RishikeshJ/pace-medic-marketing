@@ -596,43 +596,99 @@ export default function MarketingDeck() {
     };
 
     const handleWheel = (e: WheelEvent) => {
+      e.preventDefault(); // Prevent default scroll behavior
+      
       if (isScrolling) return;
       
       setIsScrolling(true);
-      setTimeout(() => setIsScrolling(false), 300);
       
+      // Determine scroll direction and move exactly one section
       if (e.deltaY > 0) {
-        nextSlide();
+        // Scrolling down - go to next slide
+        if (currentSlide < slides.length - 1) {
+          setCurrentSlide(currentSlide + 1);
+        }
       } else {
-        prevSlide();
+        // Scrolling up - go to previous slide
+        if (currentSlide > 0) {
+          setCurrentSlide(currentSlide - 1);
+        }
+      }
+      
+      // Reset scrolling flag after animation completes
+      setTimeout(() => setIsScrolling(false), 500);
+    };
+
+    // Touch scroll handling for mobile
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      e.preventDefault(); // Prevent default touch scroll
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      touchEndY = e.changedTouches[0].clientY;
+      
+      if (isScrolling) return;
+      
+      const minSwipeDistance = 50; // Minimum distance for swipe
+      const swipeDistance = touchStartY - touchEndY;
+      
+      if (Math.abs(swipeDistance) > minSwipeDistance) {
+        setIsScrolling(true);
+        
+        if (swipeDistance > 0) {
+          // Swipe up - go to next slide
+          if (currentSlide < slides.length - 1) {
+            setCurrentSlide(currentSlide + 1);
+          }
+        } else {
+          // Swipe down - go to previous slide
+          if (currentSlide > 0) {
+            setCurrentSlide(currentSlide - 1);
+          }
+        }
+        
+        setTimeout(() => setIsScrolling(false), 500);
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
     window.addEventListener('wheel', handleWheel, { passive: false });
+    window.addEventListener('touchstart', handleTouchStart, { passive: false });
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+    window.addEventListener('touchend', handleTouchEnd, { passive: false });
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
       window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('touchstart', handleTouchStart);
+      window.removeEventListener('touchmove', handleTouchMove);
+      window.removeEventListener('touchend', handleTouchEnd);
     };
   }, [currentSlide, isScrolling]);
 
   return (
     <div className="min-h-screen bg-background">
       {/* Dark Mode Toggle */}
-      <div className="fixed top-8 right-8 z-50">
+      <div className="fixed top-4 right-4 md:top-8 md:right-8 z-50">
         <Button
           variant="outline"
           size="icon"
           onClick={toggleDarkMode}
-          className="w-12 h-12"
+          className="w-10 h-10 md:w-12 md:h-12"
         >
-          {isDarkMode ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
+          {isDarkMode ? <Moon className="h-4 w-4 md:h-5 md:w-5" /> : <Sun className="h-4 w-4 md:h-5 md:w-5" />}
         </Button>
       </div>
 
-      {/* Navigation Dots */}
-      <div className="fixed right-8 top-1/2 transform -translate-y-1/2 z-50 flex flex-col items-center space-y-3">
+      {/* Navigation Dots - Hidden on mobile, visible on desktop */}
+      <div className="hidden md:flex fixed right-8 top-1/2 transform -translate-y-1/2 z-50 flex-col items-center space-y-3">
         {slides.map((slide, index) => (
           <button
             key={slide.id}
@@ -647,8 +703,24 @@ export default function MarketingDeck() {
         ))}
       </div>
 
-      {/* Navigation Arrows */}
-      <div className="fixed left-8 top-1/2 transform -translate-y-1/2 z-50 flex flex-col items-center space-y-4">
+      {/* Mobile Navigation Dots - Bottom center */}
+      <div className="md:hidden fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 flex items-center space-x-2">
+        {slides.map((slide, index) => (
+          <button
+            key={slide.id}
+            onClick={() => goToSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide
+                ? 'bg-primary scale-125'
+                : 'bg-muted'
+            }`}
+            title={slide.title}
+          />
+        ))}
+      </div>
+
+      {/* Navigation Arrows - Hidden on mobile, visible on desktop */}
+      <div className="hidden md:flex fixed left-8 top-1/2 transform -translate-y-1/2 z-50 flex-col items-center space-y-4">
         <Button
           variant="outline"
           size="icon"
@@ -676,7 +748,7 @@ export default function MarketingDeck() {
         {slides.map((slide, index) => (
           <motion.div
             key={slide.id}
-            className={`min-h-screen flex items-center justify-center p-8 ${
+            className={`min-h-screen flex items-center justify-center p-4 md:p-8 ${
               index === currentSlide ? 'block' : 'hidden'
             }`}
             initial={{ opacity: 0, y: 50 }}
