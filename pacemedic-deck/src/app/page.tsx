@@ -49,16 +49,9 @@ const slides = [
     content: (
       <div className="space-y-6">
         <div className="text-center space-y-4">
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <img 
-              src="/image.png" 
-              alt="PaceMedic Logo" 
-              className="h-16 w-16 object-contain"
-            />
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
-              PaceMedic
-            </h1>
-          </div>
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+            PaceMedic
+          </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A comprehensive telehealth platform.
           </p>
@@ -676,14 +669,7 @@ export default function MarketingDeck() {
         </Button>
       </div>
 
-      {/* Logo Watermark */}
-      <div className="fixed bottom-8 left-8 z-40 opacity-30 hover:opacity-60 transition-opacity">
-        <img 
-          src="/image.png" 
-          alt="PaceMedic" 
-          className="h-8 w-8 object-contain"
-        />
-      </div>
+
 
       {/* Slides */}
       <div className="relative">
