@@ -556,7 +556,7 @@ const slides = [
 export default function MarketingDeck() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const nextSlide = () => {
     if (currentSlide < slides.length - 1) {
@@ -576,10 +576,10 @@ export default function MarketingDeck() {
 
   const toggleDarkMode = () => {
     setIsDarkMode(!isDarkMode);
-    if (!isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
+    if (isDarkMode) {
       document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
     }
   };
 
@@ -627,7 +627,7 @@ export default function MarketingDeck() {
           onClick={toggleDarkMode}
           className="w-12 h-12"
         >
-          {isDarkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          {isDarkMode ? <Moon className="h-5 w-5" /> : <Sun className="h-5 w-5" />}
         </Button>
       </div>
 
