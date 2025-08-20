@@ -991,24 +991,24 @@ export default function MarketingDeck() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="relative w-full h-full md:h-auto md:max-w-4xl"
+              className="relative w-full max-w-4xl"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Close Button - Mobile: Top right, Desktop: Above video */}
+              {/* Close Button */}
               <button
                 onClick={() => setIsVideoOpen(false)}
-                className="absolute top-4 right-4 md:-top-12 md:right-0 text-white hover:text-gray-300 transition-colors z-10"
+                className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
               >
                 <div className="flex items-center gap-2">
-                  <span className="text-sm md:text-lg">Close</span>
-                  <div className="w-6 h-6 md:w-8 md:h-8 bg-white/20 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm md:text-xl">×</span>
+                  <span className="text-lg">Close</span>
+                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    <span className="text-white text-xl">×</span>
                   </div>
                 </div>
               </button>
 
-              {/* Video Player - Mobile: Full screen, Desktop: Contained */}
-              <div className="relative w-full h-full md:h-auto md:aspect-video bg-black md:rounded-lg overflow-hidden">
+              {/* Video Player */}
+              <div className="relative w-full aspect-video bg-black rounded-lg overflow-hidden">
                 <video
                   className="w-full h-full object-contain"
                   controls
