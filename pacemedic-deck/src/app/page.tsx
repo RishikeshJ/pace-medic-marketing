@@ -787,6 +787,7 @@ export default function MarketingDeck() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const nextSlide = () => {
     if (currentSlide < slides.length - 1) {
@@ -810,6 +811,48 @@ export default function MarketingDeck() {
       document.documentElement.classList.remove('dark');
     } else {
       document.documentElement.classList.add('dark');
+    }
+  };
+
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  // Handle video modal opening with orientation
+  const openVideo = async () => {
+    setIsVideoOpen(true);
+    
+    // Request landscape orientation on mobile
+    if (isMobile && 'orientation' in screen && screen.orientation) {
+      try {
+        // @ts-ignore - Screen Orientation API
+        await screen.orientation.lock('landscape');
+      } catch (error) {
+        console.log('Could not lock orientation:', error);
+      }
+    }
+  };
+
+  // Handle video modal closing
+  const closeVideo = () => {
+    setIsVideoOpen(false);
+    
+    // Unlock orientation on mobile
+    if (isMobile && 'orientation' in screen && screen.orientation) {
+      try {
+        // @ts-ignore - Screen Orientation API
+        screen.orientation.unlock();
+      } catch (error) {
+        console.log('Could not unlock orientation:', error);
+      }
     }
   };
 
@@ -945,7 +988,7 @@ export default function MarketingDeck() {
           <Button 
             variant="outline"
             className="text-sm md:text-lg px-6 md:px-8 py-3 md:py-4 font-semibold bg-background/80 backdrop-blur-sm"
-            onClick={() => setIsVideoOpen(true)}
+            onClick={openVideo}
           >
             <Video className="h-4 w-4 md:h-5 md:w-5 mr-2" />
             Watch Presentation
@@ -984,19 +1027,19 @@ export default function MarketingDeck() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4 md:p-8"
-            onClick={() => setIsVideoOpen(false)}
+            className="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4 md:p-8 video-modal-open"
+            onClick={closeVideo}
           >
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="relative w-full h-full md:h-auto md:max-w-4xl"
+              className="relative w-full h-full md:h-auto md:max-w-4xl video-container"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button - Mobile: Top right, Desktop: Above video */}
               <button
-                onClick={() => setIsVideoOpen(false)}
+                onClick={closeVideo}
                 className="absolute top-4 right-4 md:-top-12 md:right-0 text-white hover:text-gray-300 transition-colors z-10"
               >
                 <div className="flex items-center gap-2">
@@ -1007,7 +1050,7 @@ export default function MarketingDeck() {
                 </div>
               </button>
 
-              {/* Video Player - Mobile: Full screen, Desktop: Contained */}
+              {/* Video Player - Mobile: Full screen landscape, Desktop: Contained */}
               <div className="relative w-full h-full md:h-auto md:aspect-video bg-black md:rounded-lg overflow-hidden">
                 <video
                   className="w-full h-full object-contain"

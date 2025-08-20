@@ -53,6 +53,31 @@ html, body {
   overflow: hidden;
 }
 
+/* Force landscape orientation for video on mobile */
+@media (max-width: 768px) {
+  .video-modal-open {
+    padding: 0 !important;
+  }
+  
+  .video-modal-open .video-container {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: none !important;
+  }
+  
+  .video-modal-open .video-container > div {
+    width: 100vw !important;
+    height: 100vh !important;
+    border-radius: 0 !important;
+  }
+  
+  .video-modal-open video {
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover !important;
+  }
+}
+
 /* Ensure video controls are accessible on mobile */
 video::-webkit-media-controls {
   display: flex !important;
