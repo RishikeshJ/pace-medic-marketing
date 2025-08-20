@@ -56,7 +56,7 @@ const slides = [
             <p className="text-base md:text-2xl text-muted-foreground max-w-4xl mx-auto">
               A comprehensive telehealth platform.
             </p>
-            <div className="flex justify-center">
+            <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
               <Button 
                 className="text-sm md:text-xl px-6 md:px-12 py-3 md:py-6 font-semibold"
                 onClick={() => window.open('https://pacemedic.com/grow-well', '_blank')}
@@ -86,7 +86,7 @@ const slides = [
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-3 w-3 text-primary" />
-                    <span>Customizable Platform</span>
+                    <span>Customizable Online Presence</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <CheckCircle className="h-3 w-3 text-primary" />
@@ -143,7 +143,7 @@ const slides = [
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 md:h-6 md:w-6 text-primary" />
-                    <span>Customizable Platform</span>
+                    <span>Customizable Online Presence</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <CheckCircle className="h-5 w-5 md:h-6 md:w-6 text-primary" />
@@ -786,6 +786,7 @@ export default function MarketingDeck() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
 
   const nextSlide = () => {
     if (currentSlide < slides.length - 1) {
@@ -824,28 +825,10 @@ export default function MarketingDeck() {
       }
     };
 
+    // Disable mouse wheel scrolling - only allow keyboard and touch navigation
     const handleWheel = (e: WheelEvent) => {
       e.preventDefault(); // Prevent default scroll behavior
-      
-      if (isScrolling) return;
-      
-      setIsScrolling(true);
-      
-      // Determine scroll direction and move exactly one section
-      if (e.deltaY > 0) {
-        // Scrolling down - go to next slide
-        if (currentSlide < slides.length - 1) {
-          setCurrentSlide(currentSlide + 1);
-        }
-      } else {
-        // Scrolling up - go to previous slide
-        if (currentSlide > 0) {
-          setCurrentSlide(currentSlide - 1);
-        }
-      }
-      
-      // Reset scrolling flag after animation completes
-      setTimeout(() => setIsScrolling(false), 500);
+      // No slide navigation via mouse wheel
     };
 
     // Touch scroll handling for mobile
@@ -903,7 +886,7 @@ export default function MarketingDeck() {
   }, [currentSlide, isScrolling]);
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background presentation-container">
       {/* Dark Mode Toggle */}
       <div className="fixed top-4 right-4 md:top-8 md:right-8 z-50">
         <Button
@@ -956,6 +939,20 @@ export default function MarketingDeck() {
         </Button>
       </div>
 
+      {/* Video Button - Only show on Executive Summary slide */}
+      {currentSlide === 0 && (
+        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
+          <Button 
+            variant="outline"
+            className="text-sm md:text-lg px-6 md:px-8 py-3 md:py-4 font-semibold bg-background/80 backdrop-blur-sm"
+            onClick={() => setIsVideoOpen(true)}
+          >
+            <Video className="h-4 w-4 md:h-5 md:w-5 mr-2" />
+            Watch Presentation
+          </Button>
+        </div>
+      )}
+
 
 
       {/* Slides */}
@@ -979,6 +976,55 @@ export default function MarketingDeck() {
           </motion.div>
         ))}
       </div>
+
+      {/* Video Player Modal */}
+      <AnimatePresence>
+        {isVideoOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/90 z-[100] flex items-center justify-center p-4 md:p-8"
+            onClick={() => setIsVideoOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              className="relative w-full h-full md:h-auto md:max-w-4xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button - Mobile: Top right, Desktop: Above video */}
+              <button
+                onClick={() => setIsVideoOpen(false)}
+                className="absolute top-4 right-4 md:-top-12 md:right-0 text-white hover:text-gray-300 transition-colors z-10"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-sm md:text-lg">Close</span>
+                  <div className="w-6 h-6 md:w-8 md:h-8 bg-white/20 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm md:text-xl">×</span>
+                  </div>
+                </div>
+              </button>
+
+              {/* Video Player - Mobile: Full screen, Desktop: Contained */}
+              <div className="relative w-full h-full md:h-auto md:aspect-video bg-black md:rounded-lg overflow-hidden">
+                <video
+                  className="w-full h-full object-contain"
+                  controls
+                  autoPlay
+                  playsInline
+                  onContextMenu={(e) => e.preventDefault()}
+                >
+                  <source src="/assets/0819.mov" type="video/quicktime" />
+                  <source src="/assets/0819.mov" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
