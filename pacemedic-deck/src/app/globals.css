@@ -33,9 +33,9 @@ body::-webkit-scrollbar {
 
 /* Prevent default scrolling behavior for presentation */
 html, body {
-  overflow: hidden;
+  overflow-x: hidden;
   overscroll-behavior: none;
-  touch-action: none;
+  touch-action: pan-y pinch-zoom;
 }
 
 /* Allow touch scrolling only for specific elements if needed */

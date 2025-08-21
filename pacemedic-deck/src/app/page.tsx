@@ -200,15 +200,15 @@ const createSlides = (isDarkMode: boolean) => [
     title: 'Why Choose PaceMedic',
     icon: Award,
     content: (
-      <div className="flex flex-col h-full">
-        <div className="flex-1 flex flex-col justify-center space-y-8 md:space-y-12">
+      <div className="flex flex-col">
+        <div className="flex flex-col justify-start pt-2 md:pt-4 space-y-4 md:space-y-6">
           <div className="text-center">
             <h2 className="text-xl md:text-5xl font-bold mb-3 md:mb-6">Why Choose PaceMedic</h2>
             <p className="text-sm md:text-2xl text-muted-foreground">Three compelling reasons to transform your healthcare delivery</p>
           </div>
           
           {/* Mobile: Simple list, Desktop: 3-column grid */}
-          <div className="md:grid md:grid-cols-3 md:gap-10 max-w-7xl mx-auto">
+          <div className="md:grid md:grid-cols-3 md:gap-8 max-w-7xl mx-auto">
             <div className="md:hidden space-y-3">
               <div className="flex items-center gap-3 p-3 bg-accent rounded-lg">
                 <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
@@ -343,7 +343,7 @@ const createSlides = (isDarkMode: boolean) => [
     title: 'Key Features & Benefits',
     icon: Zap,
     content: (
-      <div className="flex flex-col justify-center h-full space-y-4 md:space-y-6">
+      <div className="flex flex-col justify-start pt-2 md:pt-4 space-y-3 md:space-y-5">
         <div className="text-center">
           <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4">Key Features & Benefits</h2>
           <p className="text-sm md:text-xl text-muted-foreground">Comprehensive tools for modern healthcare delivery</p>
@@ -497,15 +497,15 @@ const createSlides = (isDarkMode: boolean) => [
     title: 'Business Impact',
     icon: TrendingUp,
     content: (
-      <div className="flex flex-col h-full">
-        <div className="flex-1 flex flex-col justify-center space-y-8 md:space-y-12">
+      <div className="flex flex-col">
+        <div className="flex flex-col justify-start pt-2 md:pt-4 space-y-4 md:space-y-6">
           <div className="text-center">
             <h2 className="text-xl md:text-5xl font-bold mb-3 md:mb-6">Business Impact for Institutions</h2>
             <p className="text-sm md:text-2xl text-muted-foreground">Transform your healthcare delivery with measurable results</p>
           </div>
           
           {/* Mobile: Simple timeline, Desktop: 2-column grid */}
-          <div className="md:grid md:grid-cols-2 md:gap-6 max-w-6xl mx-auto">
+          <div className="md:grid md:grid-cols-2 md:gap-4 max-w-6xl mx-auto">
             <div className="md:hidden space-y-3">
               <div className="flex items-center gap-3 p-3 bg-accent rounded-lg">
                 <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
@@ -642,16 +642,8 @@ const createSlides = (isDarkMode: boolean) => [
     title: 'Call to Action',
     icon: Phone,
     content: (
-      <div className="flex flex-col justify-center h-full space-y-4 md:space-y-8 text-center">
+      <div className="flex flex-col justify-start pt-2 md:pt-4 space-y-3 md:space-y-6 text-center">
         <div>
-          <div className="flex justify-center mb-6 md:mb-8">
-            <Logo 
-              isDarkMode={isDarkMode} 
-              width={280} 
-              height={84} 
-              className="md:w-64 md:h-20"
-            />
-          </div>
           <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4">Ready to Transform Your Healthcare Delivery?</h2>
           <p className="text-sm md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Join the future of healthcare with PaceMedic's comprehensive telehealth platform
@@ -659,7 +651,7 @@ const createSlides = (isDarkMode: boolean) => [
         </div>
         
         {/* Mobile: Simple buttons, Desktop: 3-column grid */}
-        <div className="md:grid md:grid-cols-3 md:gap-6 max-w-6xl mx-auto">
+        <div className="md:grid md:grid-cols-3 md:gap-4 max-w-6xl mx-auto">
           <div className="md:hidden space-y-3">
             <Button className="w-full" size="lg">
               <Globe className="h-4 w-4 mr-2" />
@@ -962,10 +954,10 @@ export default function MarketingDeck() {
 
       {/* Video Button - Only show on Executive Summary slide */}
       {currentSlide === 0 && (
-        <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50">
+        <div className="fixed bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-50">
           <Button 
             variant="outline"
-            className="text-sm md:text-lg px-6 md:px-8 py-3 md:py-4 font-semibold bg-background/80 backdrop-blur-sm"
+            className="text-sm md:text-lg px-4 md:px-8 py-2 md:py-4 font-semibold bg-background/80 backdrop-blur-sm"
             onClick={() => setIsVideoOpen(true)}
           >
             <Video className="h-4 w-4 md:h-5 md:w-5 mr-2" />
@@ -981,7 +973,7 @@ export default function MarketingDeck() {
         {slides.map((slide, index) => (
           <motion.div
             key={slide.id}
-            className={`h-screen overflow-y-auto pt-8 pb-20 px-3 md:px-8 md:pt-8 md:pb-8 ${
+            className={`min-h-screen overflow-y-auto pt-4 pb-16 px-3 md:px-8 md:pt-4 md:pb-8 ${
               index === currentSlide ? 'block' : 'hidden'
             }`}
             initial={{ opacity: 0, y: 50 }}
