@@ -40,8 +40,9 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
+import { Logo } from '@/components/ui/logo';
 
-const slides = [
+const createSlides = (isDarkMode: boolean) => [
   {
     id: 'executive-summary',
     title: 'Executive Summary',
@@ -50,7 +51,15 @@ const slides = [
       <div className="flex flex-col h-full">
         <div className="flex-1 flex flex-col justify-center space-y-8 md:space-y-12">
           <div className="text-center space-y-6 md:space-y-8">
-            <h1 className="text-2xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+            <div className="flex justify-center mb-6 md:mb-8">
+              <Logo 
+                isDarkMode={isDarkMode} 
+                width={120} 
+                height={40} 
+                className="md:w-32"
+              />
+            </div>
+            <h1 className="text-2xl md:text-5xl font-bold text-primary mb-4 md:mb-6">
               PaceMedic
             </h1>
             <p className="text-base md:text-2xl text-muted-foreground max-w-4xl mx-auto">
@@ -635,6 +644,14 @@ const slides = [
     content: (
       <div className="flex flex-col justify-center h-full space-y-4 md:space-y-8 text-center">
         <div>
+          <div className="flex justify-center mb-6 md:mb-8">
+            <Logo 
+              isDarkMode={isDarkMode} 
+              width={280} 
+              height={84} 
+              className="md:w-64 md:h-20"
+            />
+          </div>
           <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4">Ready to Transform Your Healthcare Delivery?</h2>
           <p className="text-sm md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Join the future of healthcare with PaceMedic's comprehensive telehealth platform
@@ -787,6 +804,8 @@ export default function MarketingDeck() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  
+  const slides = createSlides(isDarkMode);
 
   const nextSlide = () => {
     if (currentSlide < slides.length - 1) {
@@ -887,6 +906,8 @@ export default function MarketingDeck() {
 
   return (
     <div className="min-h-screen bg-background presentation-container">
+
+
       {/* Dark Mode Toggle */}
       <div className="fixed top-4 right-4 md:top-8 md:right-8 z-50">
         <Button
@@ -960,7 +981,7 @@ export default function MarketingDeck() {
         {slides.map((slide, index) => (
           <motion.div
             key={slide.id}
-            className={`h-screen overflow-y-auto pt-20 pb-20 px-3 md:px-8 md:pt-8 md:pb-8 ${
+            className={`h-screen overflow-y-auto pt-8 pb-20 px-3 md:px-8 md:pt-8 md:pb-8 ${
               index === currentSlide ? 'block' : 'hidden'
             }`}
             initial={{ opacity: 0, y: 50 }}
