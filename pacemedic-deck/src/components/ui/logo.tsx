@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 
 interface LogoProps {
   className?: string;
@@ -10,9 +9,13 @@ interface LogoProps {
   isDarkMode?: boolean;
 }
 
-export function Logo({ className = '', width = 200, height = 60, isDarkMode = true }: LogoProps) {
-  // Use pmedic_gradient.svg for both light and dark modes
-  const logoSrc = '/assets/pmedic_gradient.svg';
+export function Logo({ className = '', width = 300, height = 90, isDarkMode = true }: LogoProps) {
+  // Use pmedword.svg for the new logo
+  const logoSrc = '/assets/pmedword.svg';
+  
+  // Professional color scheme that works in both themes
+  // Light mode: Professional teal for contrast on light background
+  // Dark mode: Clean white for natural appearance on dark background
   
   return (
     <div className={`flex items-center justify-center ${className}`}>
@@ -22,6 +25,11 @@ export function Logo({ className = '', width = 200, height = 60, isDarkMode = tr
         width={width}
         height={height}
         className="object-contain"
+        style={{
+          filter: isDarkMode 
+            ? 'brightness(0) saturate(100%) invert(100%)' // Clean white for dark mode
+            : 'brightness(0) saturate(100%) invert(25%) sepia(50%) saturate(1000%) hue-rotate(160deg) brightness(90%) contrast(120%)' // Professional teal for light mode
+        }}
       />
     </div>
   );

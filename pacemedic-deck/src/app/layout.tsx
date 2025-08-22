@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "PaceMedic",
   description: "Marketing deck for PaceMedic",
   icons: {
-    icon: '/assets/pmedic_gradient.svg',
+    icon: '/favicon.svg',
   },
 };
 

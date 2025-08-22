@@ -54,14 +54,11 @@ const createSlides = (isDarkMode: boolean) => [
             <div className="flex justify-center mb-6 md:mb-8">
               <Logo 
                 isDarkMode={isDarkMode} 
-                width={120} 
-                height={40} 
-                className="md:w-32"
+                width={300} 
+                height={90} 
+                className="md:w-96"
               />
             </div>
-            <h1 className="text-2xl md:text-5xl font-bold text-primary mb-4 md:mb-6">
-              PaceMedic
-            </h1>
             <p className="text-base md:text-2xl text-muted-foreground max-w-4xl mx-auto">
               A comprehensive telehealth platform.
             </p>
