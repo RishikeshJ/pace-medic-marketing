@@ -49,9 +49,9 @@ const createSlides = (isDarkMode: boolean) => [
     icon: Home,
     content: (
       <div className="flex flex-col h-full">
-        <div className="flex-1 flex flex-col justify-center space-y-8 md:space-y-12">
-          <div className="text-center space-y-6 md:space-y-8">
-            <div className="flex justify-center mb-6 md:mb-8">
+        <div className="flex-1 flex flex-col justify-center space-y-2 md:space-y-4">
+          <div className="text-center space-y-1 md:space-y-2">
+            <div className="flex justify-center mb-1 md:mb-2">
               <Logo 
                 isDarkMode={isDarkMode} 
               />
