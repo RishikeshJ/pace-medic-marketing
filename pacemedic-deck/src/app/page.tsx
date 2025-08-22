@@ -54,9 +54,6 @@ const createSlides = (isDarkMode: boolean) => [
             <div className="flex justify-center mb-6 md:mb-8">
               <Logo 
                 isDarkMode={isDarkMode} 
-                width={300} 
-                height={90} 
-                className="md:w-96"
               />
             </div>
             <p className="text-base md:text-2xl text-muted-foreground max-w-4xl mx-auto">

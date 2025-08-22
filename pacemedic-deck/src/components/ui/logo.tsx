@@ -9,7 +9,7 @@ interface LogoProps {
   isDarkMode?: boolean;
 }
 
-export function Logo({ className = '', width = 300, height = 90, isDarkMode = true }: LogoProps) {
+export function Logo({ className = '', width = 200, height = 60, isDarkMode = true }: LogoProps) {
   // Use pmedword.svg for the new logo
   const logoSrc = '/assets/pmedword.svg';
   
@@ -24,7 +24,7 @@ export function Logo({ className = '', width = 300, height = 90, isDarkMode = tr
         alt="PaceMedic Logo"
         width={width}
         height={height}
-        className="object-contain"
+        className="object-contain w-52 h-18 md:w-[1000px] md:h-[300px]"
         style={{
           filter: isDarkMode 
             ? 'brightness(0) saturate(100%) invert(100%)' // Clean white for dark mode
